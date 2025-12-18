@@ -1,43 +1,112 @@
-# Astro Starter Kit: Minimal
+# vondrashek.com
 
-```sh
-npm create astro@latest -- --template minimal
+Personal website for **John VonDrashek** — Ruthenian Catholic software developer building tools at the intersection of faith and technology.
+
+**[View Live Site →](https://vondrashek.com)**
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Built with Astro](https://img.shields.io/badge/built%20with-Astro-ff5d01.svg)
+
+---
+
+## About
+
+A portfolio and personal site featuring:
+
+- **Byzantine-inspired design** — Burgundy & gold liturgical color palette with Eastern iconography
+- **Project showcase** — Faith-integrated software, game development tools, and developer utilities
+- **Responsive layout** — Mobile-friendly with accessible navigation
+
+### Design Elements
+
+<p align="center">
+  <img src="public/images/logo-raw.png" alt="VonDrashek Logo" width="120" />
+</p>
+
+The site incorporates:
+- **EB Garamond** serif typography for headings
+- **Byzantine icons** from the Metropolitan Museum of Art (public domain)
+- **Christ Pantocrator** from Saint Catherine's Monastery, Sinai (6th century)
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| [Astro](https://astro.build) | Static site generator |
+| TypeScript | Type-safe components |
+| GitHub Pages | Hosting |
+| GitHub Actions | CI/CD deployment |
+
+---
+
+## Project Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
+│   ├── images/          # Icons and imagery
+│   ├── favicon.svg
+│   └── CNAME
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/      # Reusable components (Icons)
+│   ├── layouts/         # Base layout with header/footer
+│   ├── pages/           # Route pages
+│   │   ├── index.astro
+│   │   ├── projects.astro
+│   │   ├── about.astro
+│   │   └── contact.astro
+│   └── styles/          # Global CSS
+└── .github/workflows/   # Deployment automation
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Development
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+# Install dependencies
+npm install
 
-## 🧞 Commands
+# Start dev server
+npm run dev
 
-All commands are run from the root of the project, from a terminal:
+# Build for production
+npm run build
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+# Preview production build
+npm run preview
+```
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Deployment
+
+The site auto-deploys to GitHub Pages on every push to `main` via GitHub Actions.
+
+### Custom Domain Setup
+
+1. Add `A` record pointing to GitHub Pages IPs
+2. Add `CNAME` record for `www` subdomain
+3. The `public/CNAME` file handles the domain configuration
+
+---
+
+## Image Credits
+
+Byzantine icons used under public domain from:
+- **Metropolitan Museum of Art** — [Open Access Initiative](https://www.metmuseum.org/about-the-met/policies-and-documents/open-access)
+- **Christ Pantocrator** — Saint Catherine's Monastery, Sinai (6th century)
+
+---
+
+## License
+
+MIT License — feel free to use this as a template for your own site.
+
+---
+
+<p align="center">
+  <em>Slava Bohu</em> — Glory to God
+</p>
