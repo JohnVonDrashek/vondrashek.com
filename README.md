@@ -101,6 +101,12 @@ Byzantine icons used under public domain from:
 
 ---
 
+## Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/6c1f28301d11341edce8d1c344dd5865e749f516.svg "Repobeats analytics image")
+
+---
+
 ## License
 
 MIT License — feel free to use this as a template for your own site.
