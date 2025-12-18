@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with John Von Drashek for collaborations, questions, or just to say hello.">
+  <section class="page-header">
+    <h1>Contact</h1>
+    <p class="page-intro">
+      Have a question, want to collaborate, or just want to connect? I'd love to hear from you.
+    </p>
+  </section>
+
+  <div class="contact-content">
+    <section class="contact-methods">
+      <div class="contact-card">
+        <h2>GitHub</h2>
+        <p>Check out my projects, open issues, or contribute to my repositories.</p>
+        <a href="https://github.com/JohnVonDrashek" target="_blank" rel="noopener" class="btn btn-primary">
+          View GitHub Profile
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <h2>Email</h2>
+        <p>For direct inquiries, collaborations, or longer conversations.</p>
+        <a href="mailto:hello@vondrashek.com" class="btn btn-outline">
+          hello@vondrashek.com
+        </a>
+      </div>
+    </section>
+
+    <section class="section response-note">
+      <p>
+        I typically respond within a few days. If you're reaching out about a project
+        collaboration or have questions about my work, I'm always happy to chat.
+      </p>
+      <p class="closing">
+        <em>Pax Christi</em> — Peace of Christ be with you.
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .page-intro {
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+  }
+
+  .contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .contact-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+
+  .contact-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .contact-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .response-note {
+    text-align: center;
+    padding: var(--spacing-md);
+  }
+
+  .response-note p {
+    color: var(--color-text-light);
+  }
+
+  .closing {
+    margin-top: var(--spacing-md);
+  }
+
+  .closing em {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--color-burgundy);
+  }
+</style>

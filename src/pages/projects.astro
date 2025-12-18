@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = {
+  faith: [
+    {
+      name: "Praymodoro",
+      description: "A prayerful Pomodoro timer with adorable saint companions. Combines productivity techniques with moments of spiritual reflection.",
+      url: "https://github.com/JohnVonDrashek/praymodoro",
+      tags: ["C#", "Productivity"]
+    },
+    {
+      name: "Catholic History Atlas",
+      description: "Interactive React-based visualization of Christian history. Explore the spread of the faith through an engaging map interface.",
+      url: "https://github.com/JohnVonDrashek/catholic-history-atlas",
+      tags: ["React", "TypeScript", "History"]
+    }
+  ],
+  gameDev: [
+    {
+      name: "Shepherd Procedural Dungeons",
+      description: ".NET dungeon generation library using graph algorithms and A* pathfinding. Framework-agnostic for use in any game engine.",
+      url: "https://github.com/JohnVonDrashek/shepherd-procedural-dungeons",
+      tags: ["C#", ".NET", "Algorithms"]
+    },
+    {
+      name: "DeSales Dungeon Helper",
+      description: "Procedural dungeon generation for MonoGame using YAML definitions. Flexible configuration for game developers.",
+      url: "https://github.com/JohnVonDrashek/desales-dungeon-helper",
+      tags: ["C#", "MonoGame", "YAML"]
+    },
+    {
+      name: "Benedict Bullet-Hell Patterns",
+      description: "Framework-agnostic C# library for bullet pattern generation. Create complex bullet-hell patterns with ease.",
+      url: "https://github.com/JohnVonDrashek/benedict-bullethell-patterns",
+      tags: ["C#", "Game Dev"]
+    },
+    {
+      name: "Myra UI Generator",
+      description: "Roslyn source generator creating strongly-typed accessors for Myra UI XML files.",
+      url: "https://github.com/JohnVonDrashek/MyraUIGenerator",
+      tags: ["C#", "Roslyn", "Code Gen"]
+    }
+  ],
+  devTools: [
+    {
+      name: "Saint Carlo Sprite Viewer",
+      description: "VSCode extension for sprite sheet inspection and grid overlay. Visualize your sprite sheets directly in the editor.",
+      url: "https://github.com/JohnVonDrashek/saint-carlo-sprite-viewer",
+      tags: ["VSCode", "TypeScript"]
+    },
+    {
+      name: "MonoGame Color Preview",
+      description: "VSCode extension displaying MonoGame color values inline. See your colors at a glance.",
+      url: "https://github.com/JohnVonDrashek/monogame-color-preview",
+      tags: ["VSCode", "TypeScript"]
+    },
+    {
+      name: "Tiled VSCode Extension",
+      description: "VSCode extension for working with Tiled map editor files.",
+      url: "https://github.com/JohnVonDrashek/tiled-vscode-extension",
+      tags: ["VSCode", "TypeScript"]
+    },
+    {
+      name: "MoonSharp Binder",
+      description: "Roslyn source generator for Lua-to-C# bindings with IntelliSense support. Seamlessly integrate Lua scripting.",
+      url: "https://github.com/JohnVonDrashek/moonsharp-binder",
+      tags: ["C#", "Roslyn", "Lua"]
+    }
+  ]
+};
+---
+
+<BaseLayout title="Projects" description="Catholic software projects, game development tools, and developer utilities by John Von Drashek.">
+  <section class="page-header">
+    <h1>Projects</h1>
+    <p class="page-intro">
+      A collection of my work spanning faith-integrated software, game development libraries,
+      and developer tools. Each project reflects my commitment to quality and intentional design.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Faith & Spirituality</h2>
+    <p class="category-desc">Projects that integrate Catholic faith with technology.</p>
+    <div class="project-grid">
+      {projects.faith.map((project) => (
+        <article class="card">
+          <span class="tag faith">Faith</span>
+          <h3>
+            <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
+          </h3>
+          <p>{project.description}</p>
+          <div class="tags">
+            {project.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Game Development</h2>
+    <p class="category-desc">Libraries and tools for game developers, primarily for MonoGame and .NET.</p>
+    <div class="project-grid">
+      {projects.gameDev.map((project) => (
+        <article class="card">
+          <h3>
+            <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
+          </h3>
+          <p>{project.description}</p>
+          <div class="tags">
+            {project.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Developer Tools</h2>
+    <p class="category-desc">VSCode extensions and utilities to improve developer workflows.</p>
+    <div class="project-grid">
+      {projects.devTools.map((project) => (
+        <article class="card">
+          <h3>
+            <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
+          </h3>
+          <p>{project.description}</p>
+          <div class="tags">
+            {project.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="github-cta">
+    <p>View all repositories on</p>
+    <a href="https://github.com/JohnVonDrashek" target="_blank" rel="noopener" class="btn btn-primary">
+      GitHub
+    </a>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .page-intro {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+  }
+
+  .category-desc {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .github-cta {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-radius: 8px;
+    margin-top: var(--spacing-lg);
+  }
+
+  .github-cta p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-light);
+  }
+</style>

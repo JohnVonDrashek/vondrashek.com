@@ -1,0 +1,84 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Catholic software developer building tools for faith and technology." } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+    <title>{title} | John Von Drashek</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <a href="/" class="site-title">John Von Drashek</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="/" class:list={[{ active: currentPath === '/' }]}>Home</a></li>
+            <li><a href="/projects" class:list={[{ active: currentPath === '/projects/' }]}>Projects</a></li>
+            <li><a href="/about" class:list={[{ active: currentPath === '/about/' }]}>About</a></li>
+            <li><a href="/contact" class:list={[{ active: currentPath === '/contact/' }]}>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="footer-quote">"Whatever you do, work at it with all your heart, as working for the Lord."</p>
+        <p class="footer-attribution">— Colossians 3:23</p>
+        <div class="footer-links">
+          <a href="https://github.com/JohnVonDrashek" target="_blank" rel="noopener">GitHub</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <p class="footer-copy">&copy; {new Date().getFullYear()} John Von Drashek. Ad Majorem Dei Gloriam.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      navToggle?.addEventListener('click', () => {
+        navLinks?.classList.toggle('open');
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', (!expanded).toString());
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

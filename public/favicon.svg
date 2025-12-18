@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle with burgundy -->
+  <circle cx="50" cy="50" r="48" fill="#722F37"/>
+
+  <!-- Gold cross - simple and elegant -->
+  <rect x="45" y="15" width="10" height="55" fill="#C9A227" rx="1"/>
+  <rect x="30" y="28" width="40" height="10" fill="#C9A227" rx="1"/>
+
+  <!-- Subtle inner glow -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#C9A227" stroke-width="1" opacity="0.3"/>
+</svg>

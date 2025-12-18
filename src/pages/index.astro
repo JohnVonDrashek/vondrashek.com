@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const featuredProjects = [
+  {
+    name: "Praymodoro",
+    description: "A prayerful Pomodoro timer with adorable saint companions. Combines productivity techniques with moments of spiritual reflection.",
+    url: "https://github.com/JohnVonDrashek/praymodoro",
+    tags: ["Faith", "Productivity", "C#"],
+    isFaith: true
+  },
+  {
+    name: "Catholic History Atlas",
+    description: "Interactive React-based visualization of Christian history. Explore the spread of the faith through an engaging map interface.",
+    url: "https://github.com/JohnVonDrashek/catholic-history-atlas",
+    tags: ["Faith", "React", "History"],
+    isFaith: true
+  },
+  {
+    name: "Shepherd Procedural Dungeons",
+    description: ".NET dungeon generation library using graph algorithms and A* pathfinding. Framework-agnostic for use in any game engine.",
+    url: "https://github.com/JohnVonDrashek/shepherd-procedural-dungeons",
+    tags: ["Game Dev", "C#", ".NET"],
+    isFaith: false
+  }
+];
+---
+
+<BaseLayout title="Home">
+  <section class="hero">
+    <h1>John Von Drashek</h1>
+    <p class="subtitle">Catholic Software Developer</p>
+    <p class="tagline">Building tools at the intersection of faith and technology</p>
+    <div class="hero-actions">
+      <a href="/projects" class="btn btn-primary">View Projects</a>
+      <a href="/about" class="btn btn-outline">About Me</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Featured Work</h2>
+    <div class="project-grid">
+      {featuredProjects.map((project) => (
+        <article class="card">
+          <h3>
+            <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
+          </h3>
+          <p>{project.description}</p>
+          <div class="tags">
+            {project.tags.map((tag) => (
+              <span class:list={['tag', { faith: tag === 'Faith' }]}>{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+    <div class="see-all">
+      <a href="/projects" class="btn btn-outline">See All Projects</a>
+    </div>
+  </section>
+
+  <section class="section mission">
+    <h2 class="section-title">My Mission</h2>
+    <div class="mission-content">
+      <p>
+        As a Catholic developer, I believe technology should serve the greater good and help others
+        grow in faith. Whether it's a productivity tool that encourages prayer, an educational
+        visualization of Church history, or game development libraries, I strive to bring
+        excellence and intentionality to everything I create.
+      </p>
+      <p>
+        <em>Ad Majorem Dei Gloriam</em> — For the Greater Glory of God.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .see-all {
+    text-align: center;
+    margin-top: var(--spacing-md);
+  }
+
+  .mission-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .mission-content p {
+    font-size: 1.125rem;
+  }
+
+  .mission-content em {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--color-burgundy);
+  }
+</style>
