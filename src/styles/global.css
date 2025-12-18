@@ -133,6 +133,9 @@ main {
 .site-logo {
   height: 40px;
   width: auto;
+  background-color: var(--color-cream);
+  border-radius: 6px;
+  padding: 4px;
 }
 
 .nav-links {
