@@ -64,25 +64,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="tech-category">
           <h3>Languages</h3>
           <ul>
-            <li>C# / .NET</li>
-            <li>TypeScript</li>
-            <li>React</li>
+            <li><a href="https://dotnet.microsoft.com/" target="_blank" rel="noopener">C# / .NET</a></li>
+            <li><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">TypeScript</a></li>
+            <li><a href="https://react.dev/" target="_blank" rel="noopener">React</a></li>
           </ul>
         </div>
         <div class="tech-category">
           <h3>Game Dev</h3>
           <ul>
-            <li>MonoGame</li>
-            <li>Procedural Generation</li>
-            <li>Myra UI</li>
+            <li><a href="https://monogame.net/" target="_blank" rel="noopener">MonoGame</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Procedural_generation" target="_blank" rel="noopener">Procedural Generation</a></li>
+            <li><a href="https://github.com/rds1983/Myra" target="_blank" rel="noopener">Myra UI</a></li>
           </ul>
         </div>
         <div class="tech-category">
           <h3>Tools</h3>
           <ul>
-            <li>Roslyn (Source Generators)</li>
-            <li>VSCode Extensions</li>
-            <li>Git / GitHub</li>
+            <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview" target="_blank" rel="noopener">Roslyn (Source Generators)</a></li>
+            <li><a href="https://code.visualstudio.com/api" target="_blank" rel="noopener">VSCode Extensions</a></li>
+            <li><a href="https://github.com/" target="_blank" rel="noopener">Git / GitHub</a></li>
           </ul>
         </div>
       </div>
@@ -196,7 +196,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .tech-category li {
     padding: 0.25em 0;
+  }
+
+  .tech-category a {
     color: var(--color-text-light);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .tech-category a:hover {
+    color: var(--color-burgundy);
+    border-bottom-color: var(--color-gold);
   }
 
   .cta-section {
