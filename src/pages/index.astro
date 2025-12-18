@@ -28,8 +28,11 @@ const featuredProjects = [
 
 <BaseLayout title="Home">
   <section class="hero">
-    <h1>John Von Drashek</h1>
-    <p class="subtitle">Catholic Software Developer</p>
+    <div class="hero-icon">
+      <img src="/images/sinai-pantocrator.jpg" alt="Christ Pantocrator icon from Saint Catherine's Monastery, Sinai" />
+    </div>
+    <h1>John VonDrashek</h1>
+    <p class="subtitle">Ruthenian Catholic Software Developer</p>
     <p class="tagline">Building tools at the intersection of faith and technology</p>
     <div class="hero-actions">
       <a href="/projects" class="btn btn-primary">View Projects</a>
@@ -60,10 +63,13 @@ const featuredProjects = [
   </section>
 
   <section class="section mission">
+    <div class="mission-image">
+      <img src="/images/met-deesis-icon.jpg" alt="Byzantine Deesis icon from the Metropolitan Museum of Art" />
+    </div>
     <h2 class="section-title">My Mission</h2>
     <div class="mission-content">
       <p>
-        As a Catholic developer, I believe technology should serve the greater good and help others
+        As a Catholic developer in the Byzantine tradition, I believe technology should serve the greater good and help others
         grow in faith. Whether it's a productivity tool that encourages prayer, an educational
         visualization of Church history, or game development libraries, I strive to bring
         excellence and intentionality to everything I create.
@@ -76,6 +82,22 @@ const featuredProjects = [
 </BaseLayout>
 
 <style>
+  .hero-icon {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto var(--spacing-md);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--color-gold);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .hero-actions {
     display: flex;
     gap: 1rem;
@@ -86,6 +108,28 @@ const featuredProjects = [
   .see-all {
     text-align: center;
     margin-top: var(--spacing-md);
+  }
+
+  .mission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mission-image {
+    width: 200px;
+    height: 250px;
+    margin-bottom: var(--spacing-md);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--color-gold);
+  }
+
+  .mission-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .mission-content {

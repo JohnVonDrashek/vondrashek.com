@@ -121,10 +121,18 @@ main {
   font-weight: 600;
   color: var(--color-cream);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .site-title:hover {
   color: var(--color-gold-light);
+}
+
+.site-logo {
+  height: 40px;
+  width: auto;
 }
 
 .nav-links {

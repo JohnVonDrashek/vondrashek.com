@@ -71,7 +71,7 @@ const projects = {
 };
 ---
 
-<BaseLayout title="Projects" description="Catholic software projects, game development tools, and developer utilities by John Von Drashek.">
+<BaseLayout title="Projects" description="Catholic software projects, game development tools, and developer utilities by John VonDrashek.">
   <section class="page-header">
     <h1>Projects</h1>
     <p class="page-intro">
@@ -80,9 +80,14 @@ const projects = {
     </p>
   </section>
 
-  <section class="section">
-    <h2 class="section-title">Faith & Spirituality</h2>
-    <p class="category-desc">Projects that integrate Catholic faith with technology.</p>
+  <section class="section faith-section">
+    <div class="section-header-with-image">
+      <div>
+        <h2 class="section-title">Faith & Spirituality</h2>
+        <p class="category-desc">Projects that integrate Catholic faith with technology.</p>
+      </div>
+      <img src="/images/met-crucifixion.jpg" alt="Byzantine Crucifixion icon from the Metropolitan Museum of Art" class="section-icon" />
+    </div>
     <div class="project-grid">
       {projects.faith.map((project) => (
         <article class="card">
@@ -178,5 +183,35 @@ const projects = {
   .github-cta p {
     margin-bottom: var(--spacing-sm);
     color: var(--color-text-light);
+  }
+
+  .section-header-with-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-icon {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid var(--color-gold);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 600px) {
+    .section-header-with-image {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .section-icon {
+      order: -1;
+      width: 100px;
+    }
   }
 </style>
