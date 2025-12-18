@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icons.astro';
 
 const projects = {
   faith: [
@@ -107,8 +108,15 @@ const projects = {
   </section>
 
   <section class="section">
-    <h2 class="section-title">Game Development</h2>
-    <p class="category-desc">Libraries and tools for game developers, primarily for MonoGame and .NET.</p>
+    <div class="section-header-with-icon">
+      <div class="section-icon-badge game">
+        <Icon name="game" size={28} />
+      </div>
+      <div>
+        <h2 class="section-title">Game Development</h2>
+        <p class="category-desc">Libraries and tools for game developers, primarily for MonoGame and .NET.</p>
+      </div>
+    </div>
     <div class="project-grid">
       {projects.gameDev.map((project) => (
         <article class="card">
@@ -127,8 +135,15 @@ const projects = {
   </section>
 
   <section class="section">
-    <h2 class="section-title">Developer Tools</h2>
-    <p class="category-desc">VSCode extensions and utilities to improve developer workflows.</p>
+    <div class="section-header-with-icon">
+      <div class="section-icon-badge tool">
+        <Icon name="tool" size={28} />
+      </div>
+      <div>
+        <h2 class="section-title">Developer Tools</h2>
+        <p class="category-desc">VSCode extensions and utilities to improve developer workflows.</p>
+      </div>
+    </div>
     <div class="project-grid">
       {projects.devTools.map((project) => (
         <article class="card">
@@ -149,6 +164,7 @@ const projects = {
   <section class="github-cta">
     <p>View all repositories on</p>
     <a href="https://github.com/JohnVonDrashek" target="_blank" rel="noopener" class="btn btn-primary">
+      <Icon name="github" size={20} class="btn-icon" />
       GitHub
     </a>
   </section>
@@ -185,6 +201,11 @@ const projects = {
     color: var(--color-text-light);
   }
 
+  .btn-icon {
+    margin-right: 0.5em;
+    vertical-align: -0.15em;
+  }
+
   .section-header-with-image {
     display: flex;
     justify-content: space-between;
@@ -202,6 +223,32 @@ const projects = {
     flex-shrink: 0;
   }
 
+  .section-header-with-icon {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-icon-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .section-icon-badge.game {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  }
+
+  .section-icon-badge.tool {
+    background: linear-gradient(135deg, #059669, #10b981);
+  }
+
   @media (max-width: 600px) {
     .section-header-with-image {
       flex-direction: column;
@@ -212,6 +259,12 @@ const projects = {
     .section-icon {
       order: -1;
       width: 100px;
+    }
+
+    .section-header-with-icon {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
   }
 </style>

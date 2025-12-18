@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icons.astro';
 ---
 
 <BaseLayout title="Contact" description="Get in touch with John VonDrashek for collaborations, questions, or just to say hello.">
@@ -13,17 +14,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="contact-content">
     <section class="contact-methods">
       <div class="contact-card">
+        <div class="card-icon github-icon">
+          <Icon name="github" size={32} />
+        </div>
         <h2>GitHub</h2>
         <p>Check out my projects, open issues, or contribute to my repositories.</p>
         <a href="https://github.com/JohnVonDrashek" target="_blank" rel="noopener" class="btn btn-primary">
-          View GitHub Profile
+          <Icon name="github" size={18} class="btn-icon" />
+          View Profile
         </a>
       </div>
 
       <div class="contact-card">
+        <div class="card-icon gmail-icon">
+          <Icon name="gmail" size={32} />
+        </div>
         <h2>Email</h2>
         <p>For direct inquiries, collaborations, or longer conversations.</p>
         <a href="mailto:johnvondrashek@gmail.com" class="btn btn-outline">
+          <Icon name="gmail" size={18} class="btn-icon" />
           johnvondrashek@gmail.com
         </a>
       </div>
@@ -35,7 +44,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         collaboration or have questions about my work, I'm always happy to chat.
       </p>
       <p class="closing">
-        <em>Pax Christi</em> — Peace of Christ be with you.
+        <em>Slava Isusu Khrystu</em> — Glory to Jesus Christ
       </p>
     </section>
   </div>
@@ -74,6 +83,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     text-align: center;
   }
 
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-sm);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .github-icon {
+    background-color: #24292e;
+    color: white;
+  }
+
+  .gmail-icon {
+    background-color: #EA4335;
+    color: white;
+  }
+
   .contact-card h2 {
     font-size: 1.5rem;
     margin-bottom: var(--spacing-xs);
@@ -82,6 +111,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .contact-card p {
     color: var(--color-text-light);
     margin-bottom: var(--spacing-md);
+  }
+
+  .btn-icon {
+    margin-right: 0.5em;
+    vertical-align: -0.15em;
   }
 
   .response-note {
