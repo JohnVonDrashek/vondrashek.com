@@ -97,7 +97,7 @@ The site auto-deploys to GitHub Pages on every push to `main` via GitHub Actions
 
 Byzantine icons used under public domain from:
 - **Metropolitan Museum of Art** — [Open Access Initiative](https://www.metmuseum.org/about-the-met/policies-and-documents/open-access)
-- **Christ Pantocrator** — Saint Catherine's Monastery, Sinai (6th century)
+- **Custom header icon** — Byzantine-style religious imagery
 
 ---
 
