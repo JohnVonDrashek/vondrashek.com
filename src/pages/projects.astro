@@ -7,14 +7,17 @@ const projects = {
     {
       name: "Council of Chalcedon VN",
       description: "An educational visual novel re-enacting the Fourth Ecumenical Council (451 AD). Experience the Council of Chalcedon through the actual words of bishops, emperors, and legates.",
-      url: "https://github.com/JohnVonDrashek/council-of-chalcedon-vn",
-      tags: ["C#", "Visual Novel", "History"]
+      url: "/projects/council-of-chalcedon/",
+      tags: ["Ren'Py", "Visual Novel", "History"],
+      internal: true,
+      logo: "/images/chalcedon/icon.webp"
     },
     {
       name: "Praymodoro",
       description: "A prayerful Pomodoro timer with adorable saint companions. Combines productivity techniques with moments of spiritual reflection.",
       url: "https://github.com/JohnVonDrashek/praymodoro",
-      tags: ["C#", "Productivity"]
+      tags: ["C#", "Productivity"],
+      logo: "https://raw.githubusercontent.com/JohnVonDrashek/praymodoro/main/praymodoro-logo.png"
     },
     {
       name: "Catholic History Atlas",
@@ -28,25 +31,29 @@ const projects = {
       name: "Shepherd Procedural Dungeons",
       description: ".NET dungeon generation library using graph algorithms and A* pathfinding. Framework-agnostic for use in any game engine.",
       url: "https://github.com/JohnVonDrashek/shepherd-procedural-dungeons",
-      tags: ["C#", ".NET", "Algorithms"]
+      tags: ["C#", ".NET", "Algorithms"],
+      logo: "https://raw.githubusercontent.com/JohnVonDrashek/shepherd-procedural-dungeons/main/src/ShepherdProceduralDungeons/icon.png"
     },
     {
       name: "DeSales Dungeon Helper",
       description: "Procedural dungeon generation for MonoGame using YAML definitions. Flexible configuration for game developers.",
       url: "https://github.com/JohnVonDrashek/desales-dungeon-helper",
-      tags: ["C#", "MonoGame", "YAML"]
+      tags: ["C#", "MonoGame", "YAML"],
+      logo: "https://raw.githubusercontent.com/JohnVonDrashek/desales-dungeon-helper/main/icon.png"
     },
     {
       name: "Benedict Bullet-Hell Patterns",
       description: "Framework-agnostic C# library for bullet pattern generation. Create complex bullet-hell patterns with ease.",
       url: "https://github.com/JohnVonDrashek/benedict-bullethell-patterns",
-      tags: ["C#", "Game Dev"]
+      tags: ["C#", "Game Dev"],
+      logo: "https://raw.githubusercontent.com/JohnVonDrashek/benedict-bullethell-patterns/main/BenedictBulletHell.Patterns/icon.png"
     },
     {
       name: "Myra UI Generator",
       description: "Roslyn source generator creating strongly-typed accessors for Myra UI XML files.",
       url: "https://github.com/JohnVonDrashek/MyraUIGenerator",
-      tags: ["C#", "Roslyn", "Code Gen"]
+      tags: ["C#", "Roslyn", "Code Gen"],
+      logo: "https://raw.githubusercontent.com/JohnVonDrashek/MyraUIGenerator/main/icon.png"
     }
   ],
   devTools: [
@@ -66,7 +73,8 @@ const projects = {
       name: "MonoGame Color Preview",
       description: "VSCode extension displaying MonoGame color values inline. See your colors at a glance.",
       url: "https://github.com/JohnVonDrashek/monogame-color-preview",
-      tags: ["VSCode", "TypeScript"]
+      tags: ["VSCode", "TypeScript"],
+      logo: "https://raw.githubusercontent.com/JohnVonDrashek/monogame-color-preview/main/images/icon.png"
     },
     {
       name: "Tiled VSCode Extension",
@@ -78,7 +86,8 @@ const projects = {
       name: "MoonSharp Binder",
       description: "Roslyn source generator for Lua-to-C# bindings with IntelliSense support. Seamlessly integrate Lua scripting.",
       url: "https://github.com/JohnVonDrashek/moonsharp-binder",
-      tags: ["C#", "Roslyn", "Lua"]
+      tags: ["C#", "Roslyn", "Lua"],
+      logo: "https://raw.githubusercontent.com/JohnVonDrashek/moonsharp-binder/main/src/MoonSharpBinder/icon.png"
     }
   ]
 };
@@ -104,10 +113,19 @@ const projects = {
     <div class="project-grid">
       {projects.faith.map((project) => (
         <article class="card">
-          <span class="tag faith">Faith</span>
-          <h3>
-            <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
-          </h3>
+          <div class="card-header">
+            {project.logo && <img src={project.logo} alt="" class="card-logo" />}
+            <div class="card-header-text">
+              <span class="tag faith">Faith</span>
+              <h3>
+                {project.internal ? (
+                  <a href={project.url}>{project.name}</a>
+                ) : (
+                  <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
+                )}
+              </h3>
+            </div>
+          </div>
           <p>{project.description}</p>
           <div class="tags">
             {project.tags.map((tag) => (
@@ -132,9 +150,14 @@ const projects = {
     <div class="project-grid">
       {projects.gameDev.map((project) => (
         <article class="card">
-          <h3>
-            <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
-          </h3>
+          <div class="card-header">
+            {project.logo && <img src={project.logo} alt="" class="card-logo" />}
+            <div class="card-header-text">
+              <h3>
+                <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
+              </h3>
+            </div>
+          </div>
           <p>{project.description}</p>
           <div class="tags">
             {project.tags.map((tag) => (
@@ -159,9 +182,14 @@ const projects = {
     <div class="project-grid">
       {projects.devTools.map((project) => (
         <article class="card">
-          <h3>
-            <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
-          </h3>
+          <div class="card-header">
+            {project.logo && <img src={project.logo} alt="" class="card-logo" />}
+            <div class="card-header-text">
+              <h3>
+                <a href={project.url} target="_blank" rel="noopener">{project.name}</a>
+              </h3>
+            </div>
+          </div>
           <p>{project.description}</p>
           <div class="tags">
             {project.tags.map((tag) => (

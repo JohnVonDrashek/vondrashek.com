@@ -46,9 +46,9 @@ const currentPath = Astro.url.pathname;
         <nav>
           <ul class="nav-links">
             <li><a href="/" class:list={[{ active: currentPath === '/' }]}>Home</a></li>
-            <li><a href="/projects" class:list={[{ active: currentPath === '/projects/' }]}>Projects</a></li>
-            <li><a href="/about" class:list={[{ active: currentPath === '/about/' }]}>About</a></li>
-            <li><a href="/contact" class:list={[{ active: currentPath === '/contact/' }]}>Contact</a></li>
+            <li><a href="/projects/" class:list={[{ active: currentPath.startsWith('/projects') }]}>Projects</a></li>
+            <li><a href="/about/" class:list={[{ active: currentPath === '/about/' }]}>About</a></li>
+            <li><a href="/contact/" class:list={[{ active: currentPath === '/contact/' }]}>Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -67,7 +67,7 @@ const currentPath = Astro.url.pathname;
             <Icon name="github" size={20} />
             GitHub
           </a>
-          <a href="/contact" class="footer-link-icon">
+          <a href="/contact/" class="footer-link-icon">
             <Icon name="email" size={20} />
             Contact
           </a>
