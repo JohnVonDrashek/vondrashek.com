@@ -1,0 +1,3 @@
+[submodule "scholastic-bible"]
+	path = scholastic-bible
+	url = https://github.com/JohnVonDrashek/scholastic-bible.git
